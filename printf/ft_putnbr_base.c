@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arotondo <arotondo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadron <kadron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 16:28:12 by arotondo          #+#    #+#             */
-/*   Updated: 2024/06/19 17:38:01 by arotondo         ###   ########.fr       */
+/*   Updated: 2024/11/11 22:40:34 by kadron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ static int	ft_return_len(unsigned long long nb, long base_len)
 	int	count;
 
 	count = 1;
-	if (nb < 0)
-		nb = base_len - nb;
+	nb = base_len - nb;
 	while (nb / base_len)
 	{
 		nb /= base_len;
@@ -72,9 +71,8 @@ int	ft_putnbr_base(unsigned long nb, char *base)
 	nb_conv = nb;
 	if (check_base(base) == 1)
 		return (0);
-	if (nb_conv < 0)
-		base[nb_conv] = base[base_len - nb_conv];
-	else if (nb_conv >= base_len)
+	base[nb_conv] = base[base_len - nb_conv];
+	if (nb_conv >= base_len)
 	{
 		ft_putnbr_base(nb_conv / base_len, base);
 		ft_putchar(base[nb_conv % base_len]);

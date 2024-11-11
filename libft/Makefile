@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arotondo <arotondo@student.42.fr>          +#+  +:+       +#+         #
+#    By: kadron <kadron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 16:35:56 by arotondo          #+#    #+#              #
-#    Updated: 2024/11/09 13:41:03 by arotondo         ###   ########.fr        #
+#    Updated: 2024/11/11 22:38:36 by kadron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ OBJ_BONUS = $(BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) -I $(SRC_HEADER) -c $(SRC_FILES) $(FILES_2)
+	$(CC) $(CFLAGS) $(SRC_HEADER) -c $(SRC_FILES) $(FILES_2)
 	ar -rcs $(NAME) $(OBJ_FILES)
 
 bonus:
